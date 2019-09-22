@@ -25,6 +25,7 @@ class Client(models.Model):
     class Meta:
         ordering = ['name']
         verbose_name = 'Clients'
+        verbose_name_plural = 'Clients'
 
 
 class Project(models.Model):
@@ -40,6 +41,7 @@ class Project(models.Model):
     class Meta:
         ordering = ['name']
         verbose_name = 'Projects'
+        verbose_name_plural = 'Projects'
 
 
 class FeatureRequest(models.Model):
@@ -58,3 +60,4 @@ class FeatureRequest(models.Model):
         unique_together = ['priority', 'project']
         ordering = ['project', 'priority']
         verbose_name = 'Feature Requests'
+        verbose_name_plural = 'Feature Requests'
