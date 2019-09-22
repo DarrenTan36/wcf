@@ -7,13 +7,15 @@ from django.db import models
 class Client(models.Model):
     """
     Client model to be utilized for populating the
-    select list in the view.
+    select list in the view.  The phone field is limited to
+    eleven digits so that it stores the number in a dialable format
+    for using in software that calls on a voip system.
     """
     name = models.CharField(max_length=64, default='', blank=False, null=False)
     contact = models.CharField(max_length=64, blank=True, null=True)
     street = models.CharField(max_length=255, blank=True, null=True)
     city = models.CharField(max_length=64, blank=True, null=True)
-    state = models.CharField(max_length=128, blank=True, null=True)
+    state = models.CharField(max_length=64, blank=True, null=True)
     zip = models.CharField(max_length=24, blank=True, null=True)
     phone = models.CharField(max_length=11, blank=True, null=True)
 
