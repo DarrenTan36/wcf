@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer, HyperlinkedRelatedField
+from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
 from features.models import Client, Project, FeatureRequest
 
 
@@ -15,8 +15,8 @@ class ProjectSerializer(ModelSerializer):
 
 
 class FeatureRequestSerializer(ModelSerializer):
-    client = HyperlinkedRelatedField(queryset=Client.objects.all(), view_name='client-detail')
-    project = HyperlinkedRelatedField(queryset=Project.objects.all(), view_name='project-detail')
+    client = PrimaryKeyRelatedField(queryset=Client.objects.all())
+    project = PrimaryKeyRelatedField(queryset=Project.objects.all())
 
     class Meta:
         model = FeatureRequest
