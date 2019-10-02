@@ -57,7 +57,8 @@ class FeatureRequest(models.Model):
         return self.title
 
     class Meta:
-        unique_together = ['priority', 'project']
-        ordering = ['project', 'priority']
+        # unique_together = ['priority', 'project']
+        # ordering = ['project', 'priority']
+        ordering = ['priority', 'target_date']
         verbose_name = 'Feature Requests'
         verbose_name_plural = 'Feature Requests'
